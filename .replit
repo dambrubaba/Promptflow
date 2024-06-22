@@ -1,0 +1,41 @@
+run = "npm run dev"
+entrypoint = "index.js"
+modules = ["nodejs-20:v9-20231020-a3526c9"]
+hidden = [".config", "package-lock.json", ".next", ".swc"]
+
+[nix]
+channel = "stable-23_05"
+
+[env]
+NEXT_TELEMETRY_DISABLED = "1"
+
+[deployment]
+build = ["npm", "run", "build"]
+run = ["npm", "run", "start"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 3001
+externalPort = 3002
+
+[[ports]]
+localPort = 35129
+externalPort = 5000
+exposeLocalhost = true
+
+[[ports]]
+localPort = 41831
+externalPort = 3001
+exposeLocalhost = true
+
+[[ports]]
+localPort = 42423
+externalPort = 3000
+
+[[ports]]
+localPort = 43951
+externalPort = 4200
