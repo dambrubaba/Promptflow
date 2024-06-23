@@ -59,16 +59,9 @@
 }
 
 .gradient-bg {
-  background: linear-gradient(to right, #4F46E5, #7C3AED);
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 dark:from-gray-800 dark:to-gray-900;
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dark .glass-effect {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border border-white border-opacity-20 dark:bg-gray-800 dark:bg-opacity-30 dark:border-gray-700;
 }
